@@ -6,9 +6,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 
-// Home Route
 Route::get('/', function () {
-    return view('welcome'); // Create a welcome.blade.php view for your home page
+    return view('welcome');
 });
 
 // Authentication Routes
@@ -18,7 +17,6 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Post Routes (requires the user to be authenticated)
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
@@ -38,5 +36,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user/bookmarks', [UserController::class, 'bookmarks'])->name('users.bookmarks');
 });
 
-// Category Routes (optional)
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
