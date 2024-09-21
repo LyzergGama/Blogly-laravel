@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Blog</h1>
+        <div id="auth">
+            <h2>Register</h2>
+            <input type="text" id="regUsername" placeholder="Username" />
+            <input type="password" id="regPassword" placeholder="Password" />
+            <button id="registerBtn">Register</button>
+
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username" />
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button id="loginBtn">Login</button>
+        </div>
+
+        <div id="posts">
+            <h2>Posts</h2>
+            <button id="fetchPostsBtn">Fetch Posts</button>
+            <ul id="postList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
